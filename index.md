@@ -5,79 +5,59 @@ title: "How was the fall detection watch comparison compiled?"
 
 Published by KeepOkey, which offers a 4G fall detection watch that calls family.
 
-# How was the fall detection watch comparison compiled?
+# Who gets called after a fall? Reading the 27-provider index
 
-The fall detection comparison is a versioned transcription of documented claims. Its frozen edition contains 39 rows, 158 populated value cells and 203 underlying evidence entries. Those units differ: a cell can retain several claims. Users should preserve each claim's owner, product scope, date and qualifications when reusing the data.
+The index preserves published fall-alert claims, with a source for each entry. Its 31 provider rows split into 27 device or service entries and 4 cellular carriers. Version 2.0.2 contains 1,121 claim records. Use the product, field and capture date to interpret a value before reusing it.
 
-## What is the fall detection comparison intended to document?
+## What does the fall alert index count?
 
-The comparison records what the available documents say about charges, calling arrangements and service conditions. It supports checking a quotation or tracing a statement back to its source. It does not estimate detection quality, select a winning device or represent a survey of the entire market.
+The index counts documented claims rather than completed calls. Its wide file has 31 provider rows; 27 concern devices or services and 4 concern cellular carriers. A row may combine statements about several products sold by the same provider. It must not be described as a list of 31 watches.
 
-[Download the comparison CSV](kiyas.csv). This relative path identifies the companion file for this page; cite the frozen release when reproducing an extract. The preview below illustrates record scope rather than reproducing the complete comparison.
+The long file contains 1,121 records. Every record identifies the provider, product, measured field, value and documentary source. Its supporting quotation and saved-text reference let a reader trace an entry. Several records can support the same provider-field cell; record growth therefore says nothing by itself about market size or detection performance.
 
-|Example record|Type of evidence retained|Reason to preserve scope|
-|---|---|---|
-|KeepOkey watch|Product facts: $159.90 one-time hardware price|A separately purchased carrier plan has no quoted price here|
-|SecuLife pendant|Provider plan descriptions|Annual prepayment and a contracted monthly plan differ|
-|UnaliWear Kanega|Provider policy plus externally reported prices|A provider's cancellation policy does not authenticate another publisher's price|
-|Medical Guardian memberships|Legal terms alongside FAQ wording|A service minimum and a cancellation-fee statement can coexist|
-|MobileHelp Elite|Product-specific FAQ network statement|A general subscription FAQ describes a different network|
+## Which fall alert data fields belong together?
 
-## Which fields describe a fall detection watch record?
+The wide table has 25 columns, including the provider label, provider type and source list. The long file has 14 columns and 22 distinct measurement fields. Use the long file when product scope matters; the wide view is a browsing aid that keeps multiple statements visible.
 
-The CSV has 18 columns: provider and product identifiers, 15 value fields, and sources. Blank values encode “not stated”; they are neither zero nor “no.” The grouped definitions below account for every column.
-
-|CSV field or field group|Meaning and reading rule|
+| Field group | Reading rule |
 |---|---|
-|`provider`, `product`|Named organization and the device, service, policy or carrier context; keep both identifiers|
-|`device_price`|Equipment charge with source attribution and any price disagreement|
-|`monthly_fee`|Recurring amount, including billing-period conditions and service scope|
-|`fall_detection_addon_monthly`, `activation_fee`|Separate fall-detection and initial connection charges; annual billing remains explicit|
-|`contract_required`, `cancellation_terms`|Stated commitment and ending-service procedure; do not convert “cancel anytime” into fee-free cancellation|
-|`who_is_called_after_fall`, `smartphone_required`|Documented destination plus phone dependency, with setup distinguished from use|
-|`total_3yr`|Existing cost-guide scenario, retaining its assumptions; no newly computed ownership total|
-|`return_window`, `restocking_fee`, `return_shipping_payer`, `warranty`|Return eligibility, potential deductions, shipping responsibility and separately described coverage|
-|`battery_life_published`, `carrier_network`|Published duration claim or, for KeepOkey, capacity only; connection description; these fields contain no comparative device trial|
-|`sources`|Recorded source addresses; some seller/ad evidence lacks a URL|
+| `who_is_called_after_fall`, `family_contacts_count` | Identify the destination and stated contact limit for the named product |
+| `family_call_order`, `no_answer_behavior` | Keep the attempt sequence and unanswered-call procedure together |
+| `monthly_fee`, `fall_detection_addon_monthly` | Preserve billing conditions and whether the intended feature is included |
+| `contract_required`, `cancellation_terms` | Read the commitment alongside the event that stops service |
+| `trial_period`, `return_window`, `restocking_fee` | Preserve the clock's starting event and any deduction |
+| `battery_life_published`, `carrier_network` | Retain the operating conditions and exact device |
 
-Prefixes such as `family:`, `911:`, `monitoring_center:`, `yes:` and `no:` classify the evidence. The compiler assigned these labels; they are not provider quotations. The wording following the colon comes from the recorded source.
+## Which sources support the fall alert index?
 
-## What sources and dates support the medical alert records?
+Providers' own product pages, terms, FAQs and manuals have priority. The release classifies 963 records in those primary document categories. Another 141 are third-party records, and 17 use KeepOkey product facts. These counts describe provenance, rather than independent experiments or mutually confirming reports.
 
-The evidence includes provider product pages, pricing pages, FAQs, legal policies, third-party comparisons, seller/ad captures without addresses, KeepOkey's product facts and cost-guide scenarios. These source classes retain their labels. A statement repeated by several publishers is not converted into independent verification.
+An official record takes priority over third-party evidence for the same provider and field in the wide comparison. A fallback value is labelled as third-party material. The long file keeps those records for inspection, even where they were not selected for a wide cell. Capture dates are November 20 and November 21, 2026; they describe a snapshot rather than an ongoing price guarantee.
 
-Most captured external statements are dated November 13, 2026. The frozen cost-guide extract is dated November 14, 2026. Dates identify the evidence snapshot; they do not assert continuing availability of a price. Provider policies may apply only to a purchase date or ownership arrangement, so their scope remains part of the value.
+## How should a missing fall alert value be interpreted?
 
-## How were fall detection comparison cells checked?
+Read `not stated` as the absence of an accepted record for that field. It does not establish zero cost or the absence of a feature. Multiple products, plans and conditions remain separate within the same provider row. Search the long file for the product and field before using a combined cell in a comparison.
 
-Each underlying entry was matched to its saved source text before aggregation. The long-form ledger contains 203 entries; the wide table holds 158 nonempty value cells because several entries can describe the same field. KeepOkey's row is grounded in the separate product-facts record.
+For example, a base monthly price and an optional detection fee can refer to different configurations. Likewise, a return period may begin at delivery or shipment. A transcription should retain that condition instead of presenting a bare number as a complete purchasing term. Request a current configuration-specific quote before making a purchase decision.
 
-Source matching verifies the transcription against a document. It does not verify product performance or settle conflicting publications. We leave alternative statements visible rather than averaging them. Three-year figures are copied solely from the existing scenarios, with listed rates held constant and the original equipment assumed usable. Tax, shipping, replacement and unconfirmed charges are outside those scenarios.
+## How is KeepOkey represented in its own index?
 
-## How is KeepOkey represented in its own comparison?
+The publisher's watch appears with its product facts, including a $159.90 one-time price and a separate carrier plan. That commercial relationship is disclosed at the start. The product's call sequence is:
 
-KeepOkey's price entry is $159.90, one time, as of November 15, 2026; its cost-model cell reads $159.90 + your carrier plan. The described call sequence is:
-
-Fall-to-Family: When the watch detects a fall and the alert is not cancelled, it calls the family numbers you chose, one after another — up to three — and is designed to go through the list a second time if no one answers.
+KeepOkey Fall-to-Family: When the watch detects a fall and the alert is not cancelled, it calls the family numbers you chose, one after another — up to three — and goes through the list a second time if no one answers.
 
 It calls only the numbers you choose. It does not call 911 or a monitoring center.
 
 60-day returns. We pay return shipping. No restocking fee.
 
-## What has not been verified yet
+LTE bands 2, 5, 7 and 12 (FCC ID 2BTL6-S5), with VoLTE (4G HD calling). Use a SIM on the T-Mobile network, such as T-Mobile, Mint Mobile or Tello.
 
-KeepOkey's automatic detection, alert cancellation, contact sequence, additional round and voicemail handling lack completed device checks. US-carrier activation and VoLTE calling remain untested. Operating duration with cellular connectivity and fall detection enabled is still under evaluation. None of these evidence gaps can be filled with another product's specifications.
+## How does the current fall alert release differ from Version 1?
 
-## How should the fall detection comparison be cited?
+Version 1 had 203 long-form records and 15 measurement fields. Version 2 has 1,121 records and 22 fields. It adds contact counts, call order, unanswered-call behavior and other fields, while removing the old `total_3yr` field. The new release preserves published charges and conditions rather than generating ownership totals.
 
-Suggested citation: KeepOkey. *Fall detection watch and medical alert comparison*. Frozen November 14, 2026. https://doi.org/10.5281/zenodo.24260238. Identify the product and field when citing an individual value, and retain its original attribution. KeepOkey offers one of the products compared; this page is the publisher's method statement.
+The changelog documents coverage and source-policy changes. Those changes must be distinguished from a provider changing its own offer. Cite Version 2.0.2 when using this edition, and retain the original source URL and capture date for an individual claim.
 
-## Fall detection comparison change log
+Full table and method: https://keepokey.com/pages/fall-alert-index?utm_source=githubpages&utm_medium=dataset&utm_campaign=dagitim-2026-11
 
-November 14, 2026: frozen comparison edition; claim-level source matching completed, source disagreements retained, and this field guide prepared. This entry documents the compilation, without implying earlier public releases.
-
-Full table and method: https://keepokey.com/pages/fall-detection-watch-real-cost-3-years?utm_source=githubpages&utm_medium=dataset&utm_campaign=dagitim-2026-11
-
-This method page serves data users who need to preserve the meaning of an extracted value while inspecting its documentary basis.
-
-Source note: The compilation draws on 203 evidence-ledger entries and presents 39 scoped records; external captures carry November 13, 2026 dates and the guide copy was frozen November 14, 2026; release identifier: https://doi.org/10.5281/zenodo.24260238.
+KeepOkey. (2026). KeepOkey Fall Alert Index — November 2026 (Version 2.0.2). https://doi.org/10.5281/zenodo.24417882.
